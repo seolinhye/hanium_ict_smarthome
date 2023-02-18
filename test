@@ -1,0 +1,42 @@
+from openapi.weather import DUST
+import time
+import threading
+
+def im():
+    stationname = '종로구'
+    sk = 'jdE5JqlbJA0zwmrt92x8b1ZhvJjZx0EFTHiaUh2LLph1Pa3aa0aGlH52XODvGZtV4TahvjzSd0Vq/oyWRTNVVw=='
+    DUST.getDust_API(stationname,sk)
+    #DUST.getDUST_API(stationname,sk)
+  threading.Timer(5,im).start()
+
+im()
+
+
+    
+def getDust_API(StationName,serviceKey):
+  #FIND dust info
+  api = 'apiaddress'
+http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty
+  queryParams = '?' + urlencode({quote_plus('numOfRows'): '1000',
+                                 quote_plus('pageNo'): '1',
+                                 quote_plus('stationName'): StationName,
+                                 quote_plus('dataTerm'): 'DAILY',
+                                 quote_plus('ver'): '1.3',
+                                 quote_plus('returnType'): 'xml',
+                                 quote_plus('serviceKey'): serviceKey
+                                 })
+      
+  url = api+queryParams
+  res = requests.get(url).content
+  xml = xmltodict.parse(res)
+  dict_data = xml['response']['body']['items']['item']
+  df = pd.DataFrame(dict_data)
+  
+  #Real-time DUST 
+  pm10 = df.iat[0,5]
+  pm25 = df.iat[0,8]
+  #print('pm10: ',pm10)
+  #print('pm25: ',pm25)
+
+  return [pm10,pm25]
+
