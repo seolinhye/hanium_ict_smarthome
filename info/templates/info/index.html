@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Userinformation surver</title>
+    </head>
+    <body>
+        <h1>UserInformation </h1>
+        <h2>Please enter the appropriate information in the blanks</h2>
+        <h3>Temperature Default = 19 Humidity Default = 55</h3>
+        <hr>
+        <form action method="POST"> {% csrf_token %}
+            <!--django에서 <form> 사용을 위한 보안 -->
+            
+            <div>
+                <label for="Userid">UserID:</label><br>
+                <input type="text" name="Userid" id="Userid">   
+            </div>
+            <div>
+                <label for="UserTemp">Preferred temperature:</label><br>
+                <input type="text" name="UserTemp" id="UserTemp">
+            </div>
+            <div>
+                <label for="UserHumid">Preferred Humidity:</label><br>
+                <input type="text" name="UserHumid" id="UserHumid">
+            </div>
+            <div>
+                <label for="Philipshuetoken">Philipshue token:</label><br>
+                <input type="text" name="Philipshuetoken" id="Philipshuetoken">
+            </div>
+            <div>
+                <label for="Smartthingstoken">Smartthings token:</label><br>
+                <input type="text" name="Smartthingstoken" id="Smartthingstoken">
+            </div>
+            <div>
+                <label for="Userlocation">Residence:</label><br>
+                <input type="text" name="Userlocation" id="Userlocation">
+            </div>
+            <button type="submit" onclick="location.href=''" >click</button>
+        </form>
+    </body>   
+</html>
+
+  

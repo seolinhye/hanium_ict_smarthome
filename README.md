@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SmartThings
 
 
@@ -90,3 +91,19 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+=======
+<<<<<<< HEAD
+server.js에서 apON만 실행되는 오류를 해결하고 있습니다
+draft로 업로드한 파일들은 계속 수정 중입니다!
+
+
+서버 실행 
+python manage.py runserver
+ctrl c 중지
+
+서버 내 manage page -> /admin
+아이디 inhye 비밀번호 ixx^6708
+=======
+# hanium_ict_smarthome
+>>>>>>> 3e291d882fc49813b5a7505151e8738061cf00ef
+>>>>>>> 609fdf76d6b5f439f29ca69503376dc8ed625c89
